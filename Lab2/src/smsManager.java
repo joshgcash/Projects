@@ -3,8 +3,7 @@ import java.time.LocalDateTime;
 public class smsManager implements smsInterface{
 
     private sms sms;
-    private static
-
+    
     @Override
     public boolean insertSms() {
         return false;

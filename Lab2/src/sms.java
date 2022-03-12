@@ -1,5 +1,4 @@
 import java.time.LocalDateTime;
-import java.util.HashMap;
 
 public class sms {
 
@@ -10,7 +9,7 @@ public class sms {
     private String transactionID;
     private LocalDateTime timeStamp;
 
-    //constructor for creating sms
+    //constructor for sms created by user
     public sms(String msisdn, String recipient, String sender, String shortCode, String transactionID, LocalDateTime timeStamp){
         this.msisdn = msisdn;
         this.recipient = recipient;
@@ -18,6 +17,16 @@ public class sms {
         this.shortCode = shortCode;
         this.transactionID = transactionID;
         this.timeStamp = timeStamp;
+    }
+
+    //constructor for sms created by system
+    public sms (String msisdn, String recipient, String sender, String shortCode, String transactionID){
+        this.msisdn = msisdn;
+        this.recipient = recipient;
+        this.sender = sender;
+        this.shortCode = shortCode;
+        this.transactionID = transactionID;
+        this.timeStamp = LocalDateTime.now();
     }
 
     public String getMsisdn(){
@@ -44,11 +53,6 @@ public class sms {
         return timeStamp;
     }
 
-    public boolean smsChecker(HashMap<String,String> map){
-        if (!map.containsKey("Mobile Number") || !map.containsKey("Message") || !map.containsKey("Short Code")){
-            return false;
-        }
-    }
 
 
 
